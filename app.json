@@ -1,0 +1,7 @@
+{
+  "name": "RideWiseApp",
+  "displayName": "RideWiseApp",
+  "expo": {
+    "sdkVersion": "33.0.0"
+  }
+}
