@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import HelloWorld from './components/HelloWorld';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
-});
+import { StyleSheet, View, ScrollView, ImageBackground, Button, Text, Alert, TouchableOpacity } from 'react-native';
+import { Font, Constants } from 'expo';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      navshow: false
+    };
+  }
+  toggleLeftNav = () => {
+    Alert.alert('You tapped the button!');
+    this.setState({navshow: !this.state.navshow});
+  }
+  componentDidMount() {
+    Font.loadAsync({
+      'Font Awesome': require('./assets/fonts/fontawesome.otf')
+    });
+  }
   render() {
+    const { navshow } = this.state;
+
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <HelloWorld />
+        <View style={styles.navside(navshow)} collapsable={true} />
+        <View style={styles.navsidemask(navshow)} collapsable={true} />
+
+        <TouchableOpacity onPress={this.toggleLeftNav}>
+          <View style={{left: 30, top: 50}}>
+            <Text style={{ fontFamily: 'Font Awesome', fontSize: 20}}>&#xf0c9;</Text>
+          </View>
+        </TouchableOpacity>
+        <ScrollView style={styles.contentbody}>
+        </ScrollView>
       </View>
     );
   }
@@ -23,18 +41,27 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'stretch',
+    //paddingTop: Constants.statusBarHeight,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  navside: (show) => ({
+    ...StyleSheet.absoluteFill,
+    width: '70%',
+    height: '100%',
+    backgroundColor: 'black',
+    zIndex: 100,
+    display: show ? '' : 'none'
+  }),
+  navsidemask: (show) => ({
+    ...StyleSheet.absoluteFill,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'grey',
+    zIndex: 95,
+    opacity: 0.3,
+    display: show ? '' : 'none'
+  }),
+  contentbody: {
+    color: 'black',
   },
 });

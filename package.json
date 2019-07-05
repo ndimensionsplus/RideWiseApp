@@ -3,17 +3,25 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "react-devtools": "react-devtools",
+    "postinstall": "react-native link react-native-screens"
   },
   "dependencies": {
-    "react-native-unimodules": "0.4.0",
+    "expo": "^33.0.0",
     "react": "16.8.3",
-    "react-native": "0.59.8"
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-screens": "^1.0.0-alpha.22",
+    "react-native-unimodules": "0.4.0",
+    "react-native-web": "^0.11.4",
+    "react-navigation": "^3.11.0"
   },
   "devDependencies": {
     "babel-jest": "24.1.0",
     "jest": "24.1.0",
     "metro-react-native-babel-preset": "0.52.0",
+    "react-devtools": "^3.6.1",
     "react-test-renderer": "16.6.3"
   },
   "jest": {
