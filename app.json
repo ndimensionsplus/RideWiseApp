@@ -1,12 +1,6 @@
 {
-  "name": "RideWiseApp",
-  "displayName": "RideWiseApp",
-  "expo": {
-    "name": "Ride Wise",
-    "slug": "ride-wise",
-    "sdkVersion": "33.0.0",
-    "platforms": ["android", "ios", "web"]
-  },
+  "name": "RideWise",
+  "displayName": "RideWise",
   "orientation": "portrait",
   "splash": {
     "backgroundColor": "#000000",
