@@ -1,7 +1,10 @@
 {
-  "name": "RideWiseApp",
-  "displayName": "RideWiseApp",
-  "expo": {
-    "sdkVersion": "33.0.0"
+  "name": "RideWise",
+  "displayName": "RideWise",
+  "orientation": "portrait",
+  "splash": {
+    "backgroundColor": "#000000",
+    "resizeMode": "contain",
+    "image": "https://image.flaticon.com/icons/svg/1006/1006555.svg"
   }
 }
