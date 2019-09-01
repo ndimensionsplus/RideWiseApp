@@ -1,5 +1,12 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Dimensions, Consta } from 'react-native';
+import {
+  Platform, 
+  Text, 
+  View, 
+  StyleSheet, 
+  TouchableOpacity, 
+  SafeAreaView 
+} from 'react-native';
 
 class WhereTo extends React.Component {
   
